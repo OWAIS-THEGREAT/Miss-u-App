@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Love"
+        tools:targetApi="31">
+        <activity
+            android:name=".Ui.Acceptance_User"
+            android:exported="false"
+            android:theme="@style/Theme.Love.ActionBar">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".Ui.MainActivity"/>
+        </activity>
+        <activity
+            android:name=".Ui.AllUserPage"
+            android:exported="true"
+            android:theme="@style/Theme.Love.ActionBar">
+
+        </activity>
+        <activity
+            android:name=".Ui.ProfilePage"
+            android:exported="false"
+            android:parentActivityName=".Ui.MainActivity"
+            android:theme="@style/Theme.Love.ActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Ui.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Ui.SplashScreeen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Ui.Register"
+            android:exported="true" />
+        <activity
+            android:name=".Ui.Signin"
+            android:exported="true" />
+        <activity
+            android:name=".Ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Love.ActionBar" />
+
+        <service
+            android:name=".MessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
